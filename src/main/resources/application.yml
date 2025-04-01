@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: spring-boot-training
+
+aws:
+  dynamodb:
+    access-key: xk36ba
+    secret-key: 9kxyux9
+    end-point:
+      url: http://localhost:8000
