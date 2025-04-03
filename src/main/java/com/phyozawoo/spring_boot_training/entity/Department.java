@@ -2,6 +2,7 @@ package com.phyozawoo.spring_boot_training.entity;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBDocument;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -10,8 +11,14 @@ import lombok.NoArgsConstructor;
 @DynamoDBDocument
 public class Department {
 
+    @Schema(
+            example = "IT"
+    )
     @DynamoDBAttribute
     private String departmentName;
+    @Schema(
+            example = "001"
+    )
     @DynamoDBAttribute
     private String departmentCode;
 

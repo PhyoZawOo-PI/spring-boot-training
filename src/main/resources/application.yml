@@ -8,3 +8,4 @@ aws:
     secret-key: 9kxyux9
     end-point:
       url: http://localhost:8000
+
