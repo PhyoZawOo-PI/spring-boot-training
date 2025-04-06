@@ -19,3 +19,8 @@ Secret Key: fakeSecretKey
 Session Token: (Leave blank)
 
 Click "Add Connection".
+
+
+### OPEN API Documentation
+
+http://localhost:8080/swagger-ui/index.html
