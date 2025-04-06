@@ -4,6 +4,7 @@ import com.phyozawoo.spring_boot_training.entity.Employee;
 import com.phyozawoo.spring_boot_training.service.EmployeeService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -48,7 +49,7 @@ public class EmployeeController {
             description = "REST API to create new Employee"
     )
     @PostMapping
-    public ResponseEntity<Employee> create(@RequestBody Employee employee){
+    public ResponseEntity<Employee> create(@Valid @RequestBody Employee employee){
         Employee savedEmployee = employeeService.createEmployee(employee);
         return new ResponseEntity<>(savedEmployee,HttpStatus.CREATED);
     }
@@ -69,8 +70,9 @@ public class EmployeeController {
     )
     @PutMapping("/{id}")
     public ResponseEntity<String> update(@PathVariable String id,
-                                         @RequestBody Employee employee){
+                                         @Valid @RequestBody Employee employee){
         String message = employeeService.updateEmployee(id, employee);
         return ResponseEntity.ok(message);
     }
+
 }
